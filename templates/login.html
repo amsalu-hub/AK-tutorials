@@ -1,0 +1,56 @@
+{% include '/includes/header.html' %}
+{% include '/includes/nave.html'%}    
+<main class="form-signin w-100 m-auto">
+    
+  <div class="col-md-10 mx-auto col-lg-5">
+    <form action="/login" method="post" class="p-4 p-md-5 border rounded-3 bg-body-tertiary needs-validation" novalidate>
+      <!--img class="mb-3 w-100" src="/static/logo.jpg" alt="" width="100px" height="50px"-->
+      <h1 class="h3 mb-3 fw-normal">Please Login Here!</h1>
+      <div class="form-floating mb-3">
+        <input type="email" name="email" class="form-control" id="floatingInput" placeholder="enter your email here" required>
+        <label for="floatingInput">Email address</label>
+        <div class="invalid-feedback">
+          Valid email is required.
+      </div>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+        <label for="floatingPassword">Password</label>
+        <div class="invalid-feedback">
+          Valid password is required.
+      </div>
+      </div>
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+      <hr class="my-4">
+      <h6>Not member yet? Register <a href="{{ url_for('registration') }}">here</a>.</h6>
+    </form>
+  </div>
+
+  </main>
+  <script type="text/javascript">
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (() => {
+      'use strict'
+    
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      const forms = document.querySelectorAll('.needs-validation')
+    
+      // Loop over them and prevent submission
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+    
+          form.classList.add('was-validated')
+        }, false)
+      })
+    })()
+    </script>
+  {% include '/includes/footer.html'%}   

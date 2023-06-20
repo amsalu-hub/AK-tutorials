@@ -1,0 +1,96 @@
+{% include '/includes/header.html' %}
+{% include '/includes/nave.html'%}    
+<main class="form-signin w-100 m-auto">
+    
+  <div class="col-md-10 mx-auto col-lg-8">
+    <form  action="/registration" method="post" class="p-4 p-md-5 border rounded-3 bg-body-tertiary needs-validation" novalidate>
+      <!--img class="mb-3 w-100" src="/static/logo.jpg" alt="" width="100px" height="50px"-->
+      <h1 class="h3 mb-3 fw-normal">Please Register Here!</h1>   
+            
+    <div class="row g-3">
+      <div class="col-sm-6 form-floating mb-3">
+        <input type="text" class="form-control" name="FirstName" id="floatingFirstName" maxlength="15" placeholder="First Name" required>
+        <label for="floatingFirstName">First Name</label>
+        <div class="invalid-feedback">
+            Valid first name is required.
+        </div>
+      </div>
+ 
+    <div class="col-sm-6 form-floating mb-3">
+        <input type="text" class="form-control" name="MiddleName" id="floatingMiddleName" maxlength="15" placeholder="Middle Name" required>
+        <label for="floatingMiddleName">Middle Name</label>
+        <div class="invalid-feedback">
+            Valid middle name is required.
+        </div>
+      </div>
+    </div>
+    <div class="row g-3">
+      <div class="col-sm-6 form-floating mb-3">
+        <input type="text" class="form-control" name="LastName" id="floatingLastName" maxlength="15" placeholder="Last Name" required>
+        <label for="floatingLastName">Last Name</label>
+        <div class="invalid-feedback">
+            Valid middle name is required.
+        </div>
+      </div>
+     
+      <div class="col-sm-6 form-floating mb-3">
+        <input type="email" class="form-control" name="Email" id="floatingEmail" maxlength="50" placeholder="enter your email here" required>
+        <label for="floatingEmail">Email address</label>
+        <div class="invalid-feedback">
+            Valid email address is required.
+        </div>
+      </div>
+    </div>
+    <div class="row g-3">
+      <div class="col-sm-6 form-floating mb-3">
+        <input type="password" class="form-control" name="Password"  id="floatingPassword" maxlength="15" placeholder="Password" required>
+        <label for="floatingPassword">Password</label>
+        <div class="invalid-feedback">
+            Valid password is required.
+        </div>
+      </div>
+   
+      <div class="col-sm-6 form-floating mb-3">
+        <input type="password" class="form-control" id="floatingConfirmPassword" maxlength="15" placeholder="Confirm Password" required>
+        <label for="floatingConfirmPassword">Confirm Password</label>
+        <div class="invalid-feedback">
+            Password confirmation is required.
+        </div>
+      </div>
+    </div>
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me" required> I agree to the terms of use of the school.
+          <div class="invalid-feedback">
+            Agreement to the terms of use required!
+        </div>
+        </label>
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Register</button>
+      <hr class="my-4">
+      <small class="text-body-secondary">By checking the above checkbox, you agree to the <a href="#">terms of use</a> of the school.</small>
+    </form>
+  </div>
+  </main>
+  <script type="text/javascript">
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
+  (() => {
+    'use strict'
+  
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.needs-validation')
+  
+    // Loop over them and prevent submission
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+  
+        form.classList.add('was-validated')
+      }, false)
+    })
+  })()
+</script>
+  {% include '/includes/footer.html'%}   

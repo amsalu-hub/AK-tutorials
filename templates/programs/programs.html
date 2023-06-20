@@ -1,0 +1,19 @@
+{% include '/includes/header.html' %}
+{% include '/includes/nave.html' %}
+<p>
+  <h1 class="center-text mt-4">A&K Online School Undergraduate Programs</h1>
+</p>
+
+<div class="row">
+  {% for program in programs_l %}
+<div class="card col-md-4" style="width: 18rem; margin-right: 2ex;">
+  <!--img src="..." class="card-img-top" alt="..."-->
+  <div class="card-body">
+    <h5 class="card-title">{{program['department']}}</h5>
+    <h6 class="card-text samall text-body-secondary">Study Duration: {{program['duration']}}</h6>
+    <p class="card-text">{{program['prodescription']}}<br> <a href="enroll/{{program['department']}}" class="btn btn-primary mt-2"> Enroll</a></p>
+  </div>
+</div>
+{% endfor %}
+</div>
+{% include '/includes/footer.html' %}

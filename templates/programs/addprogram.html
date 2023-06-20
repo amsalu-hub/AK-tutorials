@@ -1,0 +1,69 @@
+{% include '/includes/header.html' %}
+{% include '/admin/nave.html' %}
+<form class="row g-3 needs-validation" novalidate>
+    <div class="col-md-4">
+        <label for="validationCustom04" class="form-label">Program Type</label>
+        <select class="form-select" id="validationCustom04" required>
+          <option selected disabled value="">Choose...</option>
+          <option value="TVET">TVET</option>
+          <option value="Undergraduate">Undergraduate</option>
+          <option value="Postgraduate">Postgraduate</option>
+        </select>
+        <div class="invalid-feedback">
+          Please select a valid program type!
+        </div>
+      </div> 
+    <div class="col-md-4">
+    <label for="validationCustom01" class="form-label">Depatment Name</label>
+    <input type="text" class="form-control" id="validationCustom01" maxlength="50" value="Department Name" required>
+    <div class="valid-feedback">
+        Please provide a department name!
+    </div>
+  </div>  
+  <div class="col-md-4">
+    <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" required></textarea>
+    <div class="invalid-feedback">
+        Please provide a description of the department!
+      </div>
+  </div>
+  <div class="col-md-4">
+    <label for="validationCustom04" class="form-label">Study Duration </label>
+    <select class="form-select" id="validationCustom04" required>
+      <option selected disabled value="">Choose...</option>
+      <option value="1">1 Years</option>
+      <option value="2">2 Years</option>
+      <option value="3">3 Years</option>
+      <option value="4">4 Years</option>
+      <option value="5">5 Years</option>
+    </select>
+    <div class="invalid-feedback">
+      Please select a valid study duration!
+    </div>
+  </div> 
+  <div class="col-12">
+    <button class="btn btn-primary" type="submit">Submit form</button>
+  </div>
+</form>
+<script type="text/javascript">
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+</script>
+{% include '/includes/footer.html' %}
