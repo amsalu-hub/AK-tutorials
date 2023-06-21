@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine,text,inspect
 from werkzeug.security import generate_password_hash, check_password_hash
-
-db_connection_string="mysql+pymysql://0v59zl6tcengq35onjuf:pscale_pw_Jmimk8Qz14BdH5gSX6DuAwtWl669bnHbCVis49sQ9yX@aws.connect.psdb.cloud/akonlineschooldb?charset=utf8mb4"
+import os 
+db_connection_string= os.environ['db_connection_string'] ## "mysql+pymysql://0v59zl6tcengq35onjuf:pscale_pw_Jmimk8Qz14BdH5gSX6DuAwtWl669bnHbCVis49sQ9yX@aws.connect.psdb.cloud/akonlineschooldb?charset=utf8mb4"
 engine = create_engine(db_connection_string,
 connect_args = { "ssl":{
      "ssl_ca": "/etc/ssl/cert.pem"
